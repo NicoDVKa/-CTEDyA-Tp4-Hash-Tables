@@ -20,7 +20,12 @@ namespace HT
             tabla.insertar(empleado4);
             tabla.insertar(empleado5);
 
-            tabla.mostrarTabla();
+            Empleado buscado = tabla.buscar(46400343);
+            if (buscado != null)
+            {
+                Console.WriteLine("El empleado con dni {0} es: {1} y su numero de empleado es {2}",buscado.DNI,buscado.Nombre,buscado.NumEmpleado);
+            }
+
 
             Console.WriteLine("Presione un tecla para salir...");
             Console.ReadKey(true);

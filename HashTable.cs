@@ -33,6 +33,34 @@ namespace HT
             
         }
 
+        public Empleado buscar(int num) //Buscar un empleado en la tabla de hash
+        {
+            int clave = num % tamaño;
+            
+
+            if (tabla[clave] == null)
+            {
+                Console.WriteLine("No existe empleado con dni {0}",num);
+                return null;
+            }else
+            {
+                foreach (Empleado x in tabla[clave]) //Buscar de forma secuencial en las subtablas
+                {
+                    if (x.DNI==num)
+                    {
+                        
+                        return x;
+                    }
+                }
+                
+                Console.WriteLine("No existe empleado con dni {0}",num);
+                return null;
+            }
+        }
+        
+
+        
+
         public void mostrarTabla() //Lo use para corroborar que funcionara bien
         {
             for (int i = 0; i<tamaño ; i++)
